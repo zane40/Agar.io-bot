@@ -28,7 +28,7 @@ var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
 function getLatestCommit() {
     window.jQuery.ajax({
             url: "https://api.github.com/repos/apostolique/Agar.io-bot/git/refs/heads/master",
-            cache: false,
+            cache: true,
             dataType: "jsonp"
         }).done(function(data) {
             console.dir(data["data"])
