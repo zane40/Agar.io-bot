@@ -185,7 +185,7 @@ console.log("Running Apos Bot!");
     }
 
     function isFood(blob, cell) {
-        if (!cell.isVirus() && compareSize(cell, blob, 1.30) || (cell.size <= 11)) {
+        if (!cell.isVirus() && compareSize(cell, blob, 1.30) || (cell.size <= 11000)) {
             return true;
         }
         return false;
@@ -273,7 +273,7 @@ console.log("Running Apos Bot!");
 
         for (var i = 0; i < foodList.length; i++) {
             for (var j = 0; j < clusters.length; j++) {
-                if (computeDistance(foodList[i][0], foodList[i][1], clusters[j][0], clusters[j][1]) < blobSize * 1.5) {
+                if (computeDistance(foodList[i][0], foodList[i][1], clusters[j][0], clusters[j][1]) < blobSize * 9.0) {
                     clusters[j][0] = (foodList[i][0] + clusters[j][0]) / 2;
                     clusters[j][1] = (foodList[i][1] + clusters[j][1]) / 2;
                     clusters[j][2] += foodList[i][2];
@@ -458,7 +458,7 @@ console.log("Running Apos Bot!");
         } else if(canSplit(blob1, blob2)) {
             radius += splitDistance;
         } else {
-            radius += blob1.size * 2;
+            radius += blob1.size * 900;
         }*/
 
         var shouldInvert = false;
